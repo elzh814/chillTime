@@ -74,8 +74,7 @@ function startRain(isRaining) {
             
             let newRoot = document.documentElement;
             let result = tempTop + 80;
-            root.style.setAttribute('--finalTop', result + "%");
-            console.
+            newRoot.style.setProperty('--finalTop', result + "%");
             
             
 

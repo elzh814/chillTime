@@ -1,6 +1,6 @@
 :root {
     --top: 100;
-    --finalTop: ;
+    --finalTop: 1%;
 }
 body, html {
     background-color: powderblue;
@@ -96,7 +96,7 @@ a:visited {
     position:absolute;
     width: 100px;
     height: 90px;
-    animation: rainDown 1s linear infinite;
+    animation: rainDown 10s linear infinite;
     border-left: 2px solid rgba(32, 48, 105, 0.7);
     left: 500px;
     top: var(--top);
