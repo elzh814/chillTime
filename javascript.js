@@ -1,6 +1,7 @@
 var isDay = true;
 var isCat = false;
 var isRaining = false;
+var isBird = false;
 
 
 function playMusic(audio) {
@@ -18,11 +19,26 @@ function dayCycle(changeToDay) {
     var overlayGrad = document.getElementById('overlay');
     if (changeToDay) {
         isDay = true;
-        isRaining = false;
-        stop();
+        if (isRaining) {
+            startRain();
+            var music = document.getElementById("rain");
+            music.pause();
+        }
+        if(!isBird) {
+            placeBird();
+        } else if (isBird) {
+            deleteBird();
+        }
     }
     else if (!changeToDay && isDay) {
-        isDay = false;
+        if (isDay) {
+            isDay = false;
+            var music = document.getElementById("Sun");
+            music.pause();
+        }
+        if (isBird) {
+            deleteBird();
+        }
         startRain();
     }
     else if (!changeToDay && !isDay) {
@@ -42,7 +58,6 @@ function addCat() {
         var num = Math.ceil(Math.random() * 3);
         var catImage = document.createElement("div");
         catImage.setAttribute('id', "sleepingCat");
-        console.log(num);
         catImage.style.backgroundImage = "url(images/catSleep" + num + ".png)";
         document.getElementById("train").appendChild(catImage);
         isCat = true;
@@ -76,11 +91,13 @@ function startRain() {
         document.getElementById('window').appendChild(rainGif);
         createOverlay(false);
         isRaining = true;
+        createClouds();
     }
     else {
         document.getElementById('rainG').remove();
         isRaining = false;
         createOverlay(true);
+        createClouds();
     }
 }
 
@@ -95,3 +112,27 @@ function createOverlay(isOverlay) {
     }
 }
 
+// function createClouds() {
+//     var newClouds = document.getElementById("rainClouds");
+//     if(!isRaining) {
+//         newClouds.style.backgroundImage = "url(images/rainClouds.png)"
+//     }
+//     else {
+//         newClouds.style.backgroundImage = "";
+//     }
+// }
+
+function placeBird() {
+    isBird = true;
+    var newBird = document.createElement("div");
+    newBird.setAttribute("id", "bird");
+    document.getElementById("train").appendChild(newBird);
+}
+
+function deleteBird() {
+    var newBird = document.getElementById("bird");
+    if (newBird) {
+        newBird.remove();
+        isBird = false;
+    }
+}

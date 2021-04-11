@@ -19,10 +19,10 @@
         </audio> -->
         <div class="side-buttons">
             
-            <audio id="Cat" src="music/Cat.mp3" preload="auto"></audio>
-            <audio id="rain" src="music/rain.mp3" preload="auto"></audio>
-            <audio id="Lofi" src="music/Lofi.mp3" preload="auto"></audio>
-            <audio id="Sun" src="music/Bird.mp3" preload="auto"></audio>
+            <audio id="Cat" src="music/Cat.mp3" preload="auto" loop></audio>
+            <audio id="rain" src="music/rain.mp3" preload="auto" loop></audio>
+            <audio id="Lofi" src="music/Lofi.mp3" preload="auto" loop></audio>
+            <audio id="Sun" src="music/Bird.mp3" preload="auto" loop></audio>
             <input onclick="
                 playMusic('Cat');
                 addCat();"
@@ -33,7 +33,6 @@
                 "type="image" id=cloud alt="this should be a cloud" src="images/cloud.png">
             <input onclick="
                 playMusic('Lofi');
-                dayCycle(true);
                 "type="image" id=music alt="this should be music" src="images/music.png">
              <input onclick="
                 playMusic('Sun');
@@ -43,12 +42,14 @@
         </div>
 
         <div id="train">
-            
             <img src="images/TrainHack.png" alt = "This should be an image."
             id="trainImage"></img>
         </div>
         <div id="window">
             <div class="sliding-bg">
+            </div>
+            <div id="rainClouds">
+               
             </div>
         </div>        
     </body>
