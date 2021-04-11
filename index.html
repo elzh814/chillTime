@@ -4,19 +4,29 @@
     <head>
         <link rel="stylesheet" href="styles.css">
         <title>Chill</title>
+        <script src="javascript.js"></script>
     </head>
 
     <body>
+        <script src="javascript.js"></script>
+        <div id="start">
+            <input
+                onclick=" startRide();"
+                id="startButton" src="images/startButton.png" type="image">
+        </div>
         <!-- <audio autoplay loop>
             <source src="music/Lofi.mp3" type="audio/mpeg">
         </audio> -->
         <div class="side-buttons">
-            <script src="javascript.js"></script>
+            
             <audio id="Cat" src="music/Cat.mp3" preload="auto"></audio>
             <audio id="rain" src="music/rain.mp3" preload="auto"></audio>
             <audio id="Lofi" src="music/Lofi.mp3" preload="auto"></audio>
             <audio id="Sun" src="music/Bird.mp3" preload="auto"></audio>
-            <input onclick="playMusic('Cat');"type="image" id=cat alt="this should be a cat" src="images/cat.png">
+            <input onclick="
+                playMusic('Cat');
+                addCat();"
+                type="image" id=cat alt="this should be a cat" src="images/cat.png">
             <input onclick="
                 playMusic('rain');
                 dayCycle(false);
@@ -29,10 +39,11 @@
                 playMusic('Sun');
                 dayCycle(true);
                 "type="image" id=sun alt="this should be a sun" src="images/sun.png">
+            <!--<input type="image" id="sun" src="images/sunOut.png" onmouseover="pressButton(true)" onmouseout="pressButton(false)" onclick="playMusic('Sun'); dayCycle(true)">-->
         </div>
 
         <div id="train">
-            <div id="overlay"></div>
+            
             <img src="images/TrainHack.png" alt = "This should be an image."
             id="trainImage"></img>
         </div>
@@ -42,4 +53,3 @@
         </div>        
     </body>
 </html>
-

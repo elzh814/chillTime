@@ -1,10 +1,8 @@
 :root {
     --top: 100;
-    --finalTop: 1%;
+    --finalTop: 1000;
 }
-body, html {
-    background-color: powderblue;
-}
+
 h1 {
     color:red
 }
@@ -32,8 +30,7 @@ a:visited {
     z-index: 1;
 }
 #overlay {
-    background-image:
-    linear-gradient(to bottom, rgba(10, 10, 157, 1), rgba(19, 12, 76, 1));
+    background-color: rgba(25, 3, 194, 0.5);
     top: 0;
     left: 0;
     max-width: 100%;
@@ -42,6 +39,7 @@ a:visited {
     min-height: 100%;
     position: absolute;
     z-index: 2;
+    overflow: hidden;
 
 }
 #window {
@@ -53,17 +51,20 @@ a:visited {
     background: url("images/trainBG.png") repeat-x;
     position: fixed;
     background-size:contain;
-    min-width:16809px;
+    min-width: 13000px;
     min-height:75%;
     animation: slide 40s linear infinite;
+    z-index: -1;
 }
 @keyframes slide {
     0% {
 
-        margin-left: 0%;
+        /*left: -10%;*/
+        left: 0px;
     }
     100% {
-        transform: translate(-66.5%,0);
+        /*left: -336.2%;*/
+        transform: translate(-86.5%,0);
     }
 }
 .side-buttons {
@@ -74,6 +75,7 @@ a:visited {
     overflow:hidden;
     height:auto;
     width:30%;
+    margin: 2%;
 
 }
 #cat {
@@ -92,17 +94,50 @@ a:visited {
     max-width:33%;
     display: list-item;
 }
-.rain {
-    position:absolute;
-    width: 100px;
-    height: 90px;
-    animation: rainDown 10s linear infinite;
-    border-left: 2px solid rgba(32, 48, 105, 0.7);
-    left: 500px;
-    top: var(--top);
-    overflow: hidden;
+
+#sleepingCat {
+    background-image: url("images/catSleep.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    max-width: 30%;
+    min-width: 30%;
+    max-height: 30%;
+    min-height: 30%;
+    z-index: 10;
+    top: 63%;
+    left: 40%;
+    z-index: 1;
 }
-@keyframes rainDown {
-    0% {top: tempTop; opacity: 100%;}
-    100% {top: var(--finalTop); opacity: 50%;}
+
+#start {
+    background-image: url("images/wood.png");
+    position:fixed;
+    background-size: 100% 100%;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 11;
+}
+
+#startButton {
+    position:absolute;
+    top: 30%;
+    max-width: 20%;
+    min-width: 5%;
+    min-height: 5%;
+    left: 33%;
+}
+
+#rainG {
+    background-image: url("gifs/rain6.gif");
+    position: absolute;
+    max-width: 90%;
+    max-height: 90%;
+    min-width: 90%;
+    min-height: 90%;
+    z-index:0;
 }
