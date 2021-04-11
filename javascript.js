@@ -90,14 +90,14 @@ function startRain() {
         rainGif.setAttribute('id', 'rainG');
         document.getElementById('window').appendChild(rainGif);
         createOverlay(false);
-        isRaining = true;
         createClouds();
+        isRaining = true;
     }
     else {
         document.getElementById('rainG').remove();
-        isRaining = false;
-        createOverlay(true);
         createClouds();
+        createOverlay(true);
+        isRaining = false;
     }
 }
 
@@ -112,15 +112,17 @@ function createOverlay(isOverlay) {
     }
 }
 
-// function createClouds() {
-//     var newClouds = document.getElementById("rainClouds");
-//     if(!isRaining) {
-//         newClouds.style.backgroundImage = "url(images/rainClouds.png)"
-//     }
-//     else {
-//         newClouds.style.backgroundImage = "";
-//     }
-// }
+function createClouds() {
+    if (!isRaining) {
+        var newClouds = document.createElement("div");
+        newClouds.setAttribute("id", "rainClouds");
+        document.getElementById("train").appendChild(newClouds);
+    }
+    else {
+        var oldClouds = document.getElementById("rainClouds");
+        oldClouds.remove();
+    }
+}
 
 function placeBird() {
     isBird = true;
