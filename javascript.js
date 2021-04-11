@@ -39,8 +39,11 @@ window.onload = function () {
 
 function addCat() {
     if (!isCat) {
+        var num = Math.ceil(Math.random() * 3);
         var catImage = document.createElement("div");
         catImage.setAttribute('id', "sleepingCat");
+        console.log(num);
+        catImage.style.background = "url(\"images/catSleeping" + num + ".png\")";
         document.getElementById("train").appendChild(catImage);
         isCat = true;
     } else {
