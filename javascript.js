@@ -43,7 +43,7 @@ function addCat() {
         var catImage = document.createElement("div");
         catImage.setAttribute('id', "sleepingCat");
         console.log(num);
-        catImage.style.background = "url(\"images/catSleeping" + num + ".png\")";
+        catImage.style.background = "url(\"images/catSleeping3.png\")";
         document.getElementById("train").appendChild(catImage);
         isCat = true;
     } else {
