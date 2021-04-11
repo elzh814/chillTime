@@ -30,7 +30,7 @@ a:visited {
     z-index: 1;
 }
 #overlay {
-    background-color: rgba(25, 3, 194, 0.5);
+    background-color: rgba(84, 27, 208, 0.3);
     top: 0;
     left: 0;
     max-width: 100%;
