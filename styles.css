@@ -47,14 +47,17 @@ a:visited {
     height: 85vh;
     overflow: hidden;
 }
-#rainClouds {
+.rainClouds {
     background: url("images/rainClouds.png") repeat-x;
-    position: fixed;
     background-size:contain;
-    min-width: 13000px;
-    min-height:75%;
-    animation: slide 40s linear infinite;
-    z-index: 0;
+    min-width: 50%;
+    min-height:50%;
+    max-width: 50%;
+    max-height: 50%;
+    top:10%;
+    overflow: hidden;
+    /* animation: slide 40s linear infinite;
+    z-index: 1; */
 }
 .sliding-bg {
     background: url("images/trainBG.png") repeat-x;
@@ -76,7 +79,6 @@ a:visited {
         transform: translate(-86.5%,0);
     }
 }
-
 .side-buttons {
     position:absolute;
     top:5%;
