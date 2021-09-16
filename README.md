@@ -8,4 +8,3 @@ Created by Lauren Lin and Elaine Zhao, this was our first web development projec
 - How to use GitHub Porject pages
 - How to complete a project while managing each step of its lifecycle
 - How to use HTML, JavaScript, and CSS to create an interactive and dynamic website
--
